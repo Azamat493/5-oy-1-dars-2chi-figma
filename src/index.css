@@ -19,7 +19,7 @@
 
 /* Header */
 .header {
-  padding: 20px 40px;
+  padding: 20px 120px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -146,7 +146,7 @@
   transform: translateX(0);
 }
 
-@media (max-width: 801px) {
+@media (max-width: 966px) {
   .header__nav-list {
     display: none;
   }
@@ -167,9 +167,12 @@
     display: block;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 611px) {
   .demo-button {
     display: none;
+  }
+  .header {
+    padding: 20px;
   }
 }
 
@@ -283,8 +286,16 @@
     width: 180px;
     height: 55px;
     font-size: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
   }
-
+  .demo-button3 svg {
+      width: 15px;
+      height: 15px;
+  }
   img {
     width: 100%;
     height: auto;
@@ -298,7 +309,7 @@
   height: 625px;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 40px 140px;
 }
 
 .dashboard-section img {
@@ -326,6 +337,17 @@
 .images a:hover {
   transform: scale(1.05);
 }
+@media (max-width: 1301px) {
+   .images {
+    gap: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media (max-width: 1059px) {
   .dash-img {
     margin-top: 50px;
@@ -337,14 +359,7 @@
     height: auto;
     padding: 30px 15px;
   }
-  .images {
-    gap: 15px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -1449,6 +1464,10 @@
   }
   .illustration-card {
     width: 150px;
+  }
+  .demo-button4 svg {
+    width: 15px;
+    height: 15px;
   }
 }
 
