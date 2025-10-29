@@ -105,7 +105,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 60px 20px 40px 20px;
+  padding: 60px 20px 40px 60px;
   gap: 32px;
   transform: translateX(100%);
   transition: transform 0.5s ease-in-out;
@@ -1195,18 +1195,39 @@
 }
 
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  scroll-snap-type: x mandatory; 
+}
+.testimonials-grid {
+  display: flex;
   gap: 30px;
+  overflow-x: auto;
+  padding: 0 20px 10px; 
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+}
+.testimonials-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.testimonials-grid::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
 }
 
+.testimonials-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.testimonials-grid::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
 .testimonial-card {
   background: #fafafa;
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
   position: relative;
-  overflow: hidden;
 }
 
 .testimonial-card::before {
@@ -1248,7 +1269,6 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 .author-avatar img {
@@ -1292,19 +1312,11 @@
 .dot.active {
   background: #333;
 }
-.testimonials-grid {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  -webkit-overflow-scrolling: touch;
-  justify-content: center;
-}
 
 .testimonial-card {
   flex: 0 0 360px;
+  scroll-snap-align: start; /* аккуратное прилипание при прокрутке */
 }
-
 @media (max-width: 1200px) {
   .testimonials-grid {
     gap: 20px;
@@ -1408,6 +1420,30 @@
 
 .illustrations-wrapper {
   overflow-x: auto;
+  scrollbar-width: thin; 
+  scrollbar-color: #fff white; 
+  padding-bottom: 10px; 
+}
+
+.illustrations-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.illustrations-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3); 
+  border-radius: 10px;
+}
+
+.illustrations-wrapper::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius: 10px;
+  border: 2px solid rgba(255, 123, 69, 0.6); 
+  transition: all 0.3s ease;
+}
+
+.illustrations-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #fff5f0;
+  border-color: #fff;
 }
 .illustration-group {
   display: flex;
@@ -1421,7 +1457,6 @@
   width: 220px;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
